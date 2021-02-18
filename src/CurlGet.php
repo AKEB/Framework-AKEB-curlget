@@ -253,7 +253,7 @@ class CurlGet {
 
 
 	private function _addToLog($message, $dir=null, $file=null) {
-		$current_dir = sys_get_temp_dir();
+		$current_dir = sys_get_temp_dir().'/';
 		if ($dir) $current_dir = $dir;
 
 		@mkdir($current_dir,0775,true);
