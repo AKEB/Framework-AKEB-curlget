@@ -1,0 +1,35 @@
+{
+	"authors": [
+		{
+			"email": "babadzhanyan@corp.mail.ru",
+			"name": "Vadim Babajanyan",
+			"role": "Lead"
+		}
+	],
+	"autoload": {
+		"classmap": [
+			"./src/"
+		]
+	},
+	"description": "MRGS Api client for client requests and server requests",
+	"license": "Apache-2.0",
+	"name": "akeb/curlget",
+	"support": {
+		"email": "babadzhanyan@corp.mail.ru",
+		"issues": "https://github.com/AKEB/curlget/issues",
+		"wiki": "https://github.com/AKEB/curlget/wiki",
+		"source": "https://github.com/AKEB/curlget"
+	},
+	"type": "library",
+	"require": {
+		"php": "^5.4|^7.0",
+		"akeb/logger": "@stable"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "^4|^5.7",
+		"phpmd/phpmd": "@stable"
+	},
+	"repositories": [
+		
+	]
+}
