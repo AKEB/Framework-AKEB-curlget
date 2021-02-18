@@ -1,5 +1,6 @@
 <?php
-namespace AKEB\CurlGet;
+
+namespace AKEB;
 
 class CurlGet {
 	public $connectTimeout = 10;
@@ -210,18 +211,15 @@ class CurlGet {
 		$this->responseCode = curl_getinfo($this->curl, CURLINFO_HTTP_CODE);
 		$this->responseTime = max(0, $endTime - $startTime);
 		$log .= 'RESPONSE CODE: '.$this->responseCode.' ';
-		if ($this->responseErrorNum !== 0) {
-			error_log('akeb/CurlGet ERROR: '. $this->responseErrorNum .' '. $this->responseError.' ('.$url.')');
-		}
-
-		if ($this->responseCode >= 400) {
-			error_log('akeb/CurlGet ERROR: '. $this->responseCode . ' ('.$url.')');
-		}
-
+		// if ($this->responseErrorNum !== 0) {
+		// 	error_log('akeb/CurlGet ERROR: '. $this->responseErrorNum .' '. $this->responseError.' ('.$url.')');
+		// }
+		// if ($this->responseCode >= 400) {
+		// 	error_log('akeb/CurlGet ERROR: '. $this->responseCode . ' ('.$url.')');
+		// }
 		if ($this->responseErrorNum == 0 && $this->responseContentType == 'application/json' && $this->responseBody) {
 			$this->responseBody = @json_decode($this->responseBody, true);
 		}
-
 		if ($this->debug) {
 			if ($this->debugFile || $this->debugDir) {
 				if ($this->debugDir == 'syslog') {

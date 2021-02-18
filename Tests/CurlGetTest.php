@@ -1,15 +1,12 @@
 <?php
 
-use AKEB\CurlGet\CurlGet;
-
 error_reporting(E_ALL);
 
 class CurlGetTest extends PHPUnit\Framework\TestCase {
 
-
 	public function testUrlParser() {
-		$curl = new CurlGet('https://google.com', [], [], []);
-		$this->assertTrue(($curl instanceof CurlGet));
+		$curl = new \AKEB\CurlGet('https://google.com', [], [], []);
+		$this->assertTrue(($curl instanceof \AKEB\CurlGet));
 		$this->assertEquals($curl->unparse_url(), 'https://google.com');
 		$curl->addGET([
 			'a' => 1,
@@ -32,6 +29,23 @@ class CurlGetTest extends PHPUnit\Framework\TestCase {
 	}
 
 	public function testGoogle() {
-		$curl = new CurlGet('git remote add origin git@github.com:AKEB/CurlGet.git');
+		$curl = new \AKEB\CurlGet('https://github.com/AKEB/CurlGet/releases');
+		// $curl->setDebug(true);
+		$curl->setCurlopt(CURLOPT_NOBODY, true);
+		$curl->exec();
+		$this->assertEquals($curl->responseCode, 200);
+
+		$curl = new \AKEB\CurlGet('https://testserverFake.fake/AKEB/CurlGet/releases');
+		$curl->setDebug(true,null,'CurlGet.log');
+		$curl->setCurlopt(CURLOPT_NOBODY, true);
+		$curl->exec();
+		$this->assertEquals($curl->responseCode, 0);
+
+		$curl = new \AKEB\CurlGet('https://github.com/AKEB/CurlGetFakeRepo/releases');
+		// $curl->setDebug(true);
+		$curl->setCurlopt(CURLOPT_NOBODY, true);
+		$curl->exec();
+		$this->assertEquals($curl->responseCode, 404);
+
 	}
 }
