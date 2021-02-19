@@ -28,7 +28,7 @@ class CurlGetTest extends PHPUnit\Framework\TestCase {
 		unset($curl);
 	}
 
-	public function testGoogle() {
+	public function testRequest() {
 		$curl = new \AKEB\CurlGet('https://github.com/AKEB/CurlGet/releases');
 		// $curl->setDebug(true);
 		$curl->setCurlopt(CURLOPT_NOBODY, true);

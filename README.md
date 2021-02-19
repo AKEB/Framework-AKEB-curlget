@@ -1,18 +1,18 @@
-# MRGS API Client PHP
+# CurlGet
 
-composer project akeb/mrgs_api_client_php
+composer project akeb/curlget
 
 Composer config
 
 ```json
 {
     "require": {
-        "akeb/mrgs_api_client_php": "^1.0.0"
+        "akeb/curlget": "^1.0.0"
     },
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/AKEB/mrgs_api_client_php"
+            "url": "https://github.com/AKEB/curlget"
         }
     ]
 }
@@ -21,5 +21,5 @@ Composer config
 or
 
 ```bash
-composer require akeb/mrgs_api_client_php
+composer require akeb/curlget
 ```
