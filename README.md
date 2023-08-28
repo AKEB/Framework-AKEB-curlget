@@ -1,10 +1,5 @@
 # CurlGet
 
-## Tests
-
-[![pipeline status](https://gitlab.pvt/gapa/mrgs/curlget/badges/master/pipeline.svg)](https://gitlab.pvt/gapa/mrgs/curlget/-/commits/master)
-[![coverage report](https://gitlab.pvt/gapa/mrgs/curlget/badges/master/coverage.svg)](https://gitlab.pvt/gapa/mrgs/curlget/-/commits/master)
-
 ## Install
 
 composer project akeb/curlget
@@ -14,7 +9,7 @@ Composer config
 ```json
 {
     "require": {
-        "akeb/curlget": "^1.0.0"
+        "akeb/curlget": "^1.1.0"
     },
     "repositories": [
         {
