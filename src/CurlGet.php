@@ -7,6 +7,7 @@ class CurlGet {
 	public $timeout = 60;
 
 	public $responseCode;
+	public $responseTime;
 	public $responseContentType;
 	public $responseHeader;
 	public $responseBody;
