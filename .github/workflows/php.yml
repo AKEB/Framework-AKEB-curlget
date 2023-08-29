@@ -11,9 +11,10 @@ permissions:
 
 jobs:
   test_7_1:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:7.1
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -21,9 +22,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_7.1.xml
   test_7_2:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:7.2
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -31,9 +33,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_7.2.xml
   test_7_3:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:7.3
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -41,9 +44,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_7.3.xml
   test_7_4:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:7.4
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -51,9 +55,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_7.4.xml
   test_8_0:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:8.0
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -61,9 +66,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_8.0.xml
   test_8_1:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:8.1
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
@@ -71,9 +77,10 @@ jobs:
       - name: Run Tests
         run: php vendor/bin/phpunit --coverage-text --colors=never -c phpunit_8.1.xml
   test_8_2:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     container: babadzhanyan/php-unit:8.2
     steps:
+      - uses: actions/checkout@v3
       - name: Cleanup
         run: rm -rf vendor composer.lock
       - name: Install dependencies
