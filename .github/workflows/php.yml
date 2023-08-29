@@ -14,6 +14,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:7.1
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -22,6 +24,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:7.2
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -30,6 +34,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:7.3
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -38,6 +44,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:7.4
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -46,6 +54,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:8.0
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -54,6 +64,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:8.1
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
@@ -62,6 +74,8 @@ jobs:
     runs-on: self-hosted
     container: babadzhanyan/php-unit:8.2
     steps:
+      - name: Cleanup
+        run: rm -rf vendor composer.lock
       - name: Install dependencies
         run: composer install --prefer-install=auto --no-interaction
       - name: Run Tests
