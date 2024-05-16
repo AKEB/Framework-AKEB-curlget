@@ -29,13 +29,13 @@ class CurlGetTest extends PHPUnit\Framework\TestCase {
 	}
 
 	public function testRequest() {
-		$curl = new \AKEB\CurlGet('https://github.com/AKEB/CurlGet/releases');
+		$curl = new \AKEB\CurlGet('https://github.com/AKEB/Framework-AKEB-curlget/releases');
 		// $curl->setDebug(true);
 		$curl->setCurlopt(CURLOPT_NOBODY, true);
 		$curl->exec();
 		$this->assertEquals($curl->responseCode, 200);
 
-		$curl = new \AKEB\CurlGet('https://testserverFake.fake/AKEB/CurlGet/releases');
+		$curl = new \AKEB\CurlGet('https://testserverFake.fake/AKEB/Framework-AKEB-curlget/releases');
 		$curl->setDebug(true,null,'CurlGet.log');
 		$curl->setCurlopt(CURLOPT_NOBODY, true);
 		$curl->exec();
