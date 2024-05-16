@@ -144,6 +144,10 @@ class CurlGet {
 		$this->BODY = $body;
 	}
 
+	public function setMethod($method) {
+		curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, strtoupper($method));
+	}
+
 	public function useProxy($proxy, $proxyType='') {
 		if ($proxy) curl_setopt($this->curl, CURLOPT_PROXY, $proxy);
 		if ($proxyType) curl_setopt($this->curl, CURLOPT_PROXYTYPE, $proxyType);
