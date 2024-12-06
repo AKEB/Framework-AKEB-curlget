@@ -13,6 +13,7 @@ class CurlGet {
 	public $responseBody;
 	public $responseError;
 	public $responseErrorNum;
+	public $responseInfo;
 
 	private $sslVerify = true;
 	private $sslCert = '';
@@ -161,6 +162,7 @@ class CurlGet {
 		$this->responseBody = null;
 		$this->responseErrorNum = null;
 		$this->responseError = null;
+		$this->responseInfo = null;
 		$this->responseContentType = null;
 		$this->responseCode = null;
 		$this->responseTime = null;
@@ -211,17 +213,12 @@ class CurlGet {
 
 		$this->responseErrorNum = curl_errno($this->curl);
 		$this->responseError = curl_error($this->curl);
+		$this->responseInfo = curl_getinfo($this->curl);
 
 		$this->responseContentType = curl_getinfo($this->curl, CURLINFO_CONTENT_TYPE);
 		$this->responseCode = curl_getinfo($this->curl, CURLINFO_HTTP_CODE);
 		$this->responseTime = max(0, $endTime - $startTime);
 		$log .= 'RESPONSE CODE: '.$this->responseCode.' ';
-		// if ($this->responseErrorNum !== 0) {
-		// 	error_log('akeb/CurlGet ERROR: '. $this->responseErrorNum .' '. $this->responseError.' ('.$url.')');
-		// }
-		// if ($this->responseCode >= 400) {
-		// 	error_log('akeb/CurlGet ERROR: '. $this->responseCode . ' ('.$url.')');
-		// }
 		if ($this->responseErrorNum == 0 && $this->responseContentType == 'application/json' && $this->responseBody) {
 			$this->responseBody = @json_decode($this->responseBody, true);
 		}
